@@ -10,7 +10,9 @@ import node_Structure.Node;
 public class Main {
 	
 	public static void main(String args[]) {
-		
+		Runtime runtime = Runtime.getRuntime();
+		long memoryBefore = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Used Memory in bytes: " + memoryBefore);
 		BuildTree bt=new BuildTree();
 		int[] arr=new int[] {0,1,2,3,4,5,6};
 		bt.setArray(arr);
@@ -34,7 +36,12 @@ public class Main {
 		ut.update(root, 0, 6, 5, 10);
 		ans=qt.query(root, 0, 6, 0, 5);
 		System.out.println("Sum of the updated resulting range [0:5] inclusive = "+String.valueOf(ans));
-		
+		long memoryAfter = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Used Memory in bytes after execution: " + memoryAfter);
+
+        // Memory used by your code
+        long memoryUsed = memoryAfter - memoryBefore;
+        System.out.println("Memory used by your code in bytes: " + memoryUsed);
 		
 	}
 	
