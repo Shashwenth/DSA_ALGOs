@@ -7,7 +7,7 @@ public class UpdateTree {
 	public UpdateTree() {
 		super();
 	}
-	
+
 	public void updateArr(int[] arr, int idx, int val) {
 		arr[idx]=val;
 	}

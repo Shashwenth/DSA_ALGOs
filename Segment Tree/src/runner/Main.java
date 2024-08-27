@@ -13,7 +13,8 @@ public class Main {
 		Runtime runtime = Runtime.getRuntime();
 		long memoryBefore = runtime.totalMemory() - runtime.freeMemory();
         System.out.println("Used Memory in bytes: " + memoryBefore);
-		BuildTree bt=new BuildTree();
+		
+        BuildTree bt=new BuildTree();
 		int[] arr=new int[] {0,1,2,3,4,5,6};
 		bt.setArray(arr);
 		Node root=bt.build(null, 0, arr.length-1);
